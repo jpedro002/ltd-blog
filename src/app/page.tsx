@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
 import { fetchPosts } from "@/lib/contentful"
 
-export const revalidate = 60 * 60 * 1 // revalidate every hour
+export const revalidate = 3600 // revalidate every hour
 
 export default async function Home() {
   const posts = await fetchPosts()
