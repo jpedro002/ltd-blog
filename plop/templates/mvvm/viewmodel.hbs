@@ -1,0 +1,7 @@
+import { {{pascalCase name}}View } from './{{pascalCase name}}.view'
+import { use{{pascalCase name}}Model } from './{{pascalCase name}}.model'
+
+export default function {{pascalCase name}}() {
+  const props = use{{pascalCase name}}Model()
+  return <{{pascalCase name}}View {...props} />
+}

@@ -1,29 +1,31 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import type React from 'react'
+import './globals.css'
+import { Header } from '@/components/Header'
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Bits-Of-C0de",
-  description: "Explore Learn Build - A coding blog",
-  generator: 'v0.dev'
+	title: 'Bits-Of-C0de',
+	description: 'Explore Learn Build - A coding blog',
+	generator: 'v0.dev',
 }
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode
+	children: React.ReactNode
 }>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
-  )
+	return (
+		<html lang="pt" suppressHydrationWarning>
+			<body
+				className={`${inter.className} min-h-screen flex flex-col  antialiased`}
+				suppressHydrationWarning
+			>
+				<Header />
+				{children}
+			</body>
+		</html>
+	)
 }
